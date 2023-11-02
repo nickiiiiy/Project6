@@ -1,0 +1,650 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #303030;
+}
+a{
+    /* inherit- брать значение у родителя */
+    color: inherit;
+    text-decoration: none ;
+}
+ul{
+    /* list-style-type убрал точки у списка меню  */
+    list-style-type: none;
+}
+.container{
+    max-width: 1220px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+.title{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 33px;
+    color: #868585;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+.header{
+    background-image: url(../images/background.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 70px 10px 38px;
+    margin-bottom: 150px;
+}
+
+.header-suptitle{
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 400;
+    margin-top: auto;
+    
+}
+
+.header-title{
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 87px;
+
+}
+
+.header-title span{
+    display: block;
+    font-size: 42px;
+    line-height: 57px;
+}
+.header-button{
+    margin-bottom: auto;
+    margin-top: 50px;
+    /* из за того, что строчный тип,растгивался на всю длину  */
+    align-self: center;
+}
+.button-path{
+    transition: fill .5s;
+}
+/* При наведении на баттон, я передаю классу button-path другой цвет(цыет в изображения разрешения svg задается именно в path) */
+.button:hover .button-path{
+    fill:#A9A32A;
+
+
+}
+
+.button-text{
+    font-size: 18px;
+    line-height: 25px;
+    /* Расположение надписи на кнопке */
+    display: inline-block;
+    transform: translateY(-20px);
+    margin-left: -56px;
+
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.social-link{
+    padding: 0 10px;
+}
+
+.service{
+    margin-bottom: 150px;
+}
+
+.service-inner{
+    display: flex;
+}
+.service-content{
+    /* задаю ширину блоку с помощью flex-basis ,чтобы текст внутри автоматически переносился */
+    flex-basis: 510px ;
+    margin-right: 90px;
+}
+
+.service-box{
+    margin-bottom: 50px;
+}
+
+.service-box-title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+/*чтобы картинку не растягивало в зависимости от увеличения контента */
+.service-img{
+    object-fit: cover;
+}
+
+
+
+
+
+
+.info{
+    margin-bottom: 150px;
+}
+.info-inner{
+    display: flex;
+}
+
+.info-box{
+    margin-right: 90px;
+    flex-basis: 510px ;
+}
+
+.info-tabs{
+    margin-bottom: 100px;
+}
+.info-tabs-items{
+    margin-bottom: 120px;
+
+}
+
+.info-tabs-item{
+    font-size: 18px;
+    line-height: 25px;
+    margin-right: 40px;
+}
+
+.info-tabs-item--active{
+    /* Создаю подчеркивание слова */
+    border-bottom: 1px solid #303030;
+    
+}
+.info-tabs-content{
+    display: none;
+    animation: moving .7s ease;
+}
+@keyframes moving {
+    from{transform: translateX(50px);opacity: 0;}
+    to{transform: translateX(0px);opacity: 1;}
+}
+
+.info-tabs-content--active{
+    display: block;
+}
+.info-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.info-list-item{
+    flex-basis: 235px;
+    margin-bottom: 17px;
+}
+.info-list-title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 5px; 
+}
+.info-content{
+    flex-basis: 600px;
+}
+.info-content-text{
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    margin-bottom: 17px;
+}
+.info-content-img{
+    object-fit: cover;
+}
+
+.info-slider{
+    max-width: 510px;
+}
+.info-slider-img{
+    margin-right: 40px;
+    /* float-свойство для обтекания текста и каринки(в данном случае, я хочу,чтобы картинканаходилась слева) */
+    float: left;
+}
+.info-slider-text{
+    padding-bottom: 15px;
+}
+/* Стили для стрелок слайдера */
+.slick-arrow{ 
+    position: absolute;
+    left: 275px; 
+    bottom: -3px;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.slick-right{
+    left: 340px;
+}
+
+
+
+
+.blockquote{
+    padding: 128px 10px 144px;
+    background-image: url(../images/blockquote.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.blockquote-text{
+    max-width: 670px;
+    /* чтоб элемент был по центру */
+    margin: 0 auto;
+    font-size: 42px;
+    line-height: 57px;
+    color: #fff;
+
+}
+.clients{
+    margin-bottom: 150px;
+}
+.clients-slider-box{
+    display: flex;
+}
+
+.clients-slider-box-img{
+    flex-basis: 510px;
+    margin-bottom: 30px;
+    margin-right: 90px;
+}
+.clients-slider-box-title{
+    max-width: 478px;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.clients-slider-box-list{
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+.clients-slider-box-item{
+    margin-bottom: 15px;
+}
+.slick-arrow path{
+    transition: fill .3s;
+
+}
+
+/* При нажатии на стрелку, она меняет цвет */
+.slick-arrow:hover path{
+    fill:#A9A32A
+}
+
+
+
+
+
+.step{
+    margin-bottom: 150px;
+}
+
+.step-inner{
+    display: flex;
+
+}
+
+.step-img{
+    flex-basis: 600px;
+    object-fit: cover;
+}
+
+.step-content{
+    margin-right: 90px;
+    /* flex-basis: 510px; */
+}
+
+.step-list{
+    /* убираю цифры у ol(так как мне нужно задать другие) */
+    list-style: none;
+    counter-reset: number;
+}
+.step-list-item{
+    counter-increment: number;
+    margin-bottom: 30px;
+}
+
+.step-list-item::before{
+    /* задаю списку значения 01 02 03 */
+    content: '0' counter(number);
+    margin-bottom: 11px;
+    color: #868585;
+}
+/* nth-child - это возможность обратиться к какому то элементу */
+/* если вдруг список будет больше 9, чтобы пере 10 не было 0 , я его убрал из контента*/
+.step-list-item:nth-child(n+10)::before{
+    content:  counter(number);
+}
+.step-list-title{
+    margin-bottom: 2px;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+.footer{
+    background-image: url(../images/footer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 70px 0 50px;
+    color: #fff;
+}
+.footer-top{
+    display: flex;
+    margin-bottom: 150px;
+}
+.footer-form{
+    flex-basis: 510px;
+    margin-right: 90px;
+}
+.footer-title{
+    font-size: 24px;
+    line-height: 43px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+.footer-input{
+    border: none;
+    border-bottom: 1px solid #fff;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    padding-bottom: 11px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 60px;
+}
+.footer-input::placeholder{
+    color: #fff;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+.footer-form-btn{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: #fff  ;
+}
+
+/* .footer-contacts{
+    flex-basis: 600px;
+} */
+.footer-contacts-item{
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .social{
+    margin-right: -10px;
+}
+
+
+
+
+
+@media(max-width:1240px){
+    .info-inner {
+        /*чтобы элементы препрыгнули друг под друга, но wrap-reverse меняет их местами  */
+        flex-wrap: wrap-reverse;
+    }
+    .info-box {
+        margin-right: 0;
+        flex-basis: 100%;
+        display: flex;
+    }
+    .info-content {
+        flex-basis: 100%;
+    }
+    .info-content-img {
+        display: none;
+    }
+    .info-list {
+        align-self: flex-start;
+        margin-left: 40px;
+    }
+    .info-tabs-items {
+        margin-bottom: 40px;
+    }
+    
+}
+
+
+
+@media(max-width:1024px){
+    .service-inner {
+        /* чтобы элементы препрыгнули друг под друга */
+        flex-wrap: wrap;
+
+    }
+
+    .service-content {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+    .service-img {
+        width: 100%;
+        height: 400px;
+    }
+    .step-inner {
+        flex-wrap: wrap;
+    }
+    .step-content {
+        margin-right: 0;
+        /* flex-basis: 510px; */
+    }
+    .step-img {
+        height: 400px;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+@media(max-width:960px){
+    .clients-slider-box {
+        display: block;
+    }
+    .clients-slider-box-title {
+        max-width: 100%;
+    }
+    .clients-slider-box-img {
+        width: 100%;
+        object-fit: cover;
+        height: 300px;
+        margin-right: 0;
+    }
+}
+
+@media(max-width:826px){
+    .info-box {
+        display: block;
+    }
+    .info-list {
+        margin-left: 0;
+    }
+
+}
+
+
+@media(max-width:640px){
+    .header,
+    .service,
+    .info,
+    blockquote,
+    .clients,
+    .step,
+    .footer{
+        margin-bottom: 75px;
+    }
+}
+
+@media(max-width:768px){
+    .header-title {
+        font-size: 48px;
+        line-height: 56px;
+    }
+    .header-title span {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .blockquote {
+        padding: 60px 10px 80px;
+    }
+    .blockquote-text {
+        font-size: 28px;
+        line-height: 36px;   
+    }
+    .footer-bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-bottom .logo{
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .footer-top {
+        flex-wrap: wrap;
+    }
+    .footer-form {
+        flex-basis: 100%;
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+
+}
+
+@media(max-width:540px){
+    .header-title {
+        font-size: 32px;
+        line-height: 38px;
+    }
+    .header-title span {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .header-suptitle {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    
+
+    /* .info-slider{
+        max-width: 100%;
+    }
+    .info-slider-img {
+        margin-right: 0;
+        float: none;
+        width: 100%;
+        margin-bottom: 25px;
+    } */
+
+    .info-slider{
+        max-width: 300px;
+        /* когда фиксированная ширина, чтобы элемент встал по центру */
+        margin: 0 auto;
+    }
+    .info-slider-img{
+        margin-right: 0;
+        margin-bottom: 25px;
+        float: none;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .slick-right{
+        /* подсчет расстояния с помощью метода calc  */
+        left:calc(50% + 10px);
+    }
+    .slick-left{
+        left:calc(50% - 50px);
+        
+    }
+    .info-list {
+        display: block;
+       
+    }
+    .info-tabs-item {
+        margin-right: 0;
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+
+    .clients-slider-box-list {
+        margin-left: 0;
+    }
+
+}
+
+@media(max-width:375px){
+    .button-text {
+        margin-left: -75px;
+    }
+    .title {
+        margin-bottom: 40px;
+    }
+    .service-box {
+        margin-bottom: 30px;
+    }
+    .blockquote-text {
+        font-size: 22px;
+        line-height: 28px;   
+    }
+}
+
+@media(max-width:340px){
+    .info-slider{
+        max-width: 280px;
+    }
+    
+}
+
+
+
